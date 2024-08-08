@@ -3,8 +3,8 @@ const app = express();
 const cors=require('cors')
 const PORT=process.env.PORT||3001
 const morgan=require('morgan')
-app.use(cors())
 app.use(express.json());
+app.use(express.static('dist'))
 morgan.token('body', (req) => {
     return JSON.stringify(req.body);
   });
